@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Confirm Email";
+}
+<div class="sub-nav hidden-sm hidden-xs">
+    <ul>
+        <li><a href="" class="heading">Confirm Email</a></li>
+
+    </ul>
+
+</div>
+<!-- Sub Nav End -->
+<!-- Dashboard Wrapper Start -->
+<div class="dashboard-wrapper-lg">
+    <h2>@ViewBag.Title.</h2>
+    <div>
+        <p>
+            Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+    </div>
+</div>
