@@ -11,6 +11,7 @@ namespace BugTrackerCF.Helpers
     public class UserRolesHelper
     {
         private UserManager<ApplicationUser> manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public bool IsUserInRole(string userId, string roleName)
         {
@@ -42,6 +43,8 @@ namespace BugTrackerCF.Helpers
                 if (IsUserInRole(user.Id, roleName))
                     resultList.Add(user);
             }
+            //var roleId = db.Roles.FirstOrDefault(r => r.Name == roleName).Id;
+            //resultList = manager.Users.Where(u => u.Roles.Any(r => r.RoleId == roleId)).ToList();
             return resultList;
         }
 
@@ -54,6 +57,8 @@ namespace BugTrackerCF.Helpers
                 if (!IsUserInRole(user.Id, roleName))
                     resultList.Add(user);
             }
+            //var roleId = db.Roles.FirstOrDefault(r => r.Name == roleName).Id;
+            //resultList = manager.Users.Where(u => u.Roles.Any(r => r.RoleId != roleId)).ToList();
             return resultList;
         }
 

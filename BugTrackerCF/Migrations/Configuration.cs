@@ -40,7 +40,7 @@ namespace BugTrackerCF.Migrations
             var userManager = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
             ApplicationUser user;
-            if (!context.Users.Any(r => r.Email == "admin@coderfoundry.com"))
+            if (!context.Users.Any(r => r.Email == "rmanglani@coderfoundry.com"))
             {
                 user = new ApplicationUser
                 {
@@ -55,15 +55,15 @@ namespace BugTrackerCF.Migrations
                 userManager.AddToRole(user.Id, "Admin");
             }
 
-            if (!context.Users.Any(r => r.Email == "tparrish@coderfoundry.com"))
+            if (!context.Users.Any(r => r.Email == "manny@manglani.com"))
             {
                 user = new ApplicationUser
                 {
-                    UserName = "tparrish@coderfoundry.com",
-                    Email = "tparrish@coderfoundry.com",
-                    FirstName = "Thomas",
-                    LastName = "Parrish",
-                    DisplayName = "Thomas Parrish"
+                    UserName = "manny@manglani.com",
+                    Email = "manny@manglani.com",
+                    FirstName = "Manny",
+                    LastName = "Manglani",
+                    DisplayName = "Manny Manglani"
                 };
                 userManager.Create(user, "Password-1");
 
