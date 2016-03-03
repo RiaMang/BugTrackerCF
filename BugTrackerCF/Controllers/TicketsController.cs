@@ -11,6 +11,7 @@ using BugTrackerCF.Models;
 using Microsoft.AspNet.Identity;
 using BugTrackerCF.Hub;
 using Microsoft.AspNet.SignalR;
+using hbehr.recaptcha;
 
 namespace BugTrackerCF.Controllers
 {
@@ -224,14 +225,27 @@ namespace BugTrackerCF.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Created,Updated,ProjectId,TicketStatusId,TicketPriorityId,TicketTypeId,OwnerUserId,AssignedToUserId")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,ProjectId,TicketStatusId,TicketPriorityId,TicketTypeId,AssignedToUserId")] Ticket ticket)
         {
-            if (ModelState.IsValid)
+            string userResponse = HttpContext.Request.Params["g-recaptcha-response"];
+            bool validCaptcha = ReCaptcha.ValidateCaptcha(userResponse);
+            if (validCaptcha)
             {
-                db.Tickets.Add(ticket);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    ticket.Created = System.DateTimeOffset.Now;
+                    ticket.OwnerUserId = User.Identity.GetUserId();
+                    db.Tickets.Add(ticket);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+            else
+            {
+                // Bot Attack, non validated !
+                return RedirectToAction("YouAreARobot", "Home");
+            }
+            
 
             ViewBag.AssignedToUserId = new SelectList(db.Users, "Id", "FirstName", ticket.AssignedToUserId);
             ViewBag.OwnerUserId = new SelectList(db.Users, "Id", "FirstName", ticket.OwnerUserId);

@@ -23,6 +23,11 @@ namespace BugTrackerCF.Controllers
                 return View();
         }
 
+        public ActionResult YouAreARobot()
+        {
+            return View();
+        }
+
         public ActionResult EditUser(string id= "edf8da98-ba7f-4626-a73f-77c9d2862dd7")
         {
             var user = db.Users.Find(id);

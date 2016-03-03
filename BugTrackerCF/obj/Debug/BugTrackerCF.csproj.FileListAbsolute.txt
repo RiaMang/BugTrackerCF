@@ -74,3 +74,4 @@ C:\Users\Ria\Documents\GitHub\BugTrackerCF\BugTrackerCF\bin\Microsoft.AspNet.Sig
 C:\Users\Ria\Documents\GitHub\BugTrackerCF\BugTrackerCF\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
 C:\Users\Ria\Documents\GitHub\BugTrackerCF\BugTrackerCF\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\Users\Ria\Documents\GitHub\BugTrackerCF\BugTrackerCF\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Ria\Documents\GitHub\BugTrackerCF\BugTrackerCF\bin\hbehr.recaptcha.dll
