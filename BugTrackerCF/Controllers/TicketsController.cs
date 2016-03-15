@@ -315,9 +315,8 @@ namespace BugTrackerCF.Controllers
                         Property = "Description",
                         OldValue = oldTic?.Description,
                         NewValue = ticket.Description,
-                        EditId = editId,
-                        Changed = changed,
-                        UserId = userid
+                        Changed = changed, // system date
+                        UserId = userid  // current userId
                     };
                     db.TicketHistories.Add(th2);
                 }

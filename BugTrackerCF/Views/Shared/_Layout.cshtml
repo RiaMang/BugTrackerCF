@@ -16,6 +16,7 @@
     <link href="~/Content/datepicker.css" rel="stylesheet" />
     <link href="~/fonts/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/DataTables-1.10.7/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Buttons-1.1.2/css/buttons.dataTables.min.css" rel="stylesheet" />
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -57,7 +58,7 @@
                                     <h4 class="modal-title text-danger" id="myModalLabel5">Coding Style </h4>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="img/documentation.png" alt="Esquare Admin">
+                                    <img src="~/img/documentation.png" alt="Esquare Admin">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -133,7 +134,7 @@
                 </li>
                 <li class="list-box user-profile">
                     <a id="drop7" href="#" role="button" class="dropdown-toggle user-avtar" data-toggle="dropdown">
-                        <img src="img/user5.png" alt="Bluemoon User">
+                        <img src="~/img/user5.png" alt="Bluemoon User">
                     </a>
                     <ul class="dropdown-menu server-activity">
                         <li>
@@ -298,6 +299,15 @@
     @*<script src="~/Scripts/custom-index2.js"></script>*@
     <script src="~/Scripts/DataTables-1.10.7/media/js/jquery.dataTables.min.js"></script>
     <script src="~/Scripts/DataTables-1.10.7/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    <!-- been bundled-->
+    @Scripts.Render("~/bundles/button")
+    @*<script src="~/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
+    <script src="~/Buttons-1.1.2/js/buttons.colVis.min.js"></script>
+    <script src="~/Buttons-1.1.2/js/buttons.html5.min.js"></script>
+    <script src="~/Buttons-1.1.2/js/buttons.print.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script type="text/javascript">
       //ScrollUp
       $(function () {

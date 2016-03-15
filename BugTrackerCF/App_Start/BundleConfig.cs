@@ -22,7 +22,11 @@ namespace BugTrackerCF
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
-
+            bundles.Add(new ScriptBundle("~/bundles/button").Include(
+                      "~/Buttons-1.1.2/js/dataTables.buttons.min.js",
+                      "~/Buttons-1.1.2/js/buttons.html5.min.js",
+                      "~/Buttons-1.1.2/js/buttons.print.min.js",
+                      "~/Buttons-1.1.2/js/buttons.colVis.min.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

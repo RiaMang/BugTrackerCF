@@ -17,7 +17,7 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table id="TicketTable">
+    <table id="TicketTable" >
         <thead>
         <tr>
             <th>
@@ -105,7 +105,16 @@
 
         <script>
                 $('#TicketTable').DataTable({
-                    responsive: true
+                    responsive: true,
+                    //buttons: ['copy', 'excel', 'pdf']
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5',
+                        'print'
+                    ]
                 });
 </script>
     }
